@@ -1,0 +1,162 @@
+:root {
+    --soft-blue: #D3E4FD;
+    --soft-pink: #FFDEE2;
+    --white: #FFFFFF;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom, var(--white), var(--soft-blue));
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  .particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .profile {
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    animation: slideIn 0.8s ease-out;
+  }
+  
+  .description {
+    font-size: 1.125rem;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    animation: slideIn 1s ease-out;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    animation: fadeIn 1.2s ease-out;
+  }
+  
+  .social-link {
+    color: #4a4a4a;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 0.75rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social-link:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 222, 226, 0.2);
+  }
+  
+  .social-link[title="SoundCloud"]:hover {
+    color: var(--soundcloud-color);
+  }
+  
+  .social-link[title="Steam"]:hover {
+    color: var(--steam-color);
+  }
+  
+  .social-link[title="GitHub"]:hover {
+    color: var(--github-color);
+  }
+
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes particle {
+    0% {
+      transform: translateY(-10vh) translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(20vw) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .title {
+      font-size: 2rem;
+    }
+    
+    .description {
+      font-size: 1rem;
+    }
+  }
