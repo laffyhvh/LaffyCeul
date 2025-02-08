@@ -40,7 +40,6 @@ class Particle {
     }
   }
   
-  // Initialize particle system when DOM is loaded
   document.addEventListener('DOMContentLoaded', () => {
     new ParticleSystem();
   });
